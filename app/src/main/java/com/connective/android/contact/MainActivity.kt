@@ -1,12 +1,19 @@
 package com.connective.android.contact
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.pm.PackageManager
+import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.TabLayout
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :  AppCompatActivity()  {
@@ -38,6 +45,29 @@ class MainActivity :  AppCompatActivity()  {
                     .setAction("Action", null).show()
         }
         this.configureTabLayout()
+        this.checkPermission()
+    }
+    val AccessContactCode = 123
+    fun checkPermission(){
+        if(Build.VERSION.SDK_INT >= 23){
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(arrayOf(android.Manifest.permission.READ_CONTACTS), AccessContactCode)
+                return
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when(requestCode){
+            AccessContactCode ->{
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
+                }else{
+                    Toast.makeText(this, "We cannot access to the user Location", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     private fun configureTabLayout(){

@@ -1,8 +1,11 @@
 package com.connective.android.contact
 
+import android.content.ContentResolver
 import android.content.Context
+import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -29,7 +32,6 @@ class DialFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
     private var mParam2: String? = null
-
     private var mListener: OnFragmentInteractionListener? = null
     var layoutManager: RecyclerView.LayoutManager? = null
     var recentCalls: ArrayList<RecentCallers> = ArrayList()
@@ -41,6 +43,19 @@ class DialFragment : Fragment() {
         }
 
 
+    }
+
+    fun getContacts(): ArrayList<RecentCallers>{
+        val cursor:Cursor = context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null)
+        var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
+        while (cursor.moveToNext()){
+            TODO("GET PHONE NUMBER AND GET RECENT CALLS, ACTUALLY ARE GETTING ALL CONTACTS")
+            var tempCall:RecentCallers = RecentCallers(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)), cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID)), 0)
+            //var id = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID))
+            //var pCursor =  context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID, + " = ?",  Array<String>), null)
+            tempRecentList.add(tempCall)
+        }
+        return tempRecentList;
     }
 
 
@@ -58,7 +73,7 @@ class DialFragment : Fragment() {
         this.recentCalls.add(RecentCallers("Juancho", "+25365", 1))
         this.recentCalls.add(RecentCallers("Yolanda", "4687530", 1))
 
-        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.recentCalls)
+        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getContacts())
         dialView.lvRecentCalls.setHasFixedSize(true)
         val divider: DividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))

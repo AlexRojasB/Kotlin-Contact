@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:elevation="5sp"
+              android:orientation="vertical"
+>
+    <LinearLayout android:layout_width="match_parent" android:background="@color/colorPrimary"
+                  android:layout_height="80dp">
+        <LinearLayout android:elevation="3dp" android:layout_width="match_parent"
+                      android:layout_marginStart="5dp" android:layout_marginEnd="5dp"
+                      android:background="@drawable/search_contact_bg"
+                      android:layout_height="70dp" android:orientation="horizontal"
+                      android:paddingTop="5dp" android:paddingBottom="5dp">
+            <ImageView
+                    android:layout_margin="10dp"
+                    android:id="@+id/gmailitem_letter"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:orientation="vertical" android:layout_marginStart="5dp"
+                          android:layout_gravity="center">
+                <TextView android:id="@+id/callerName" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:text="Alexander Rojas"
+                          android:textColor="@color/colorPrimaryText"/>
+                <TextView android:id="@+id/callerNumber" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:text="+506 8321 5665"
+                          android:textColor="@color/colorSecondaryText" android:textSize="20dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="5dp"
+                          android:gravity="center_vertical|right"
+                          android:orientation="vertical" android:layout_marginEnd="10dp">
+                <Button android:layout_width="20dp" android:layout_height="20dp"
+                        android:background="@drawable/ic_call_black_48dp" android:layout_marginBottom="2dp"/>
+                <Button android:layout_width="20dp" android:layout_height="20dp"
+                        android:background="@drawable/ic_message_black_48dp" android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

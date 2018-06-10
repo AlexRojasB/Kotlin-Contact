@@ -3,24 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.2.41\9e7a6f582de73d9cdc6c56ef4e23604a0ee55768\kotlin-stdlib-jre7-1.2.41.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="9e7a6f582de73d9cdc6c56ef4e23604a0ee55768">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-jre7-1.2.41_8a6a5a62f85e8ada0cc3f0d5588bb6b80c0fe02f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.1\cece6996f6bc526ed0d8453a43765bcf8f2b6018\constraint-layout-solver-1.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="cece6996f6bc526ed0d8453a43765bcf8f2b6018">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.1.1_32025a315b02f35b6a52c577a66a9ad8809ff431\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Libra\.android\build-cache\d73c4675e553d9a084f768090d83888f839646c1\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -36,6 +18,42 @@
         revision="27.0.3"
         sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
         <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ae5f2d4d1d38b45a55a215db7108fb37c1d73983\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.android\build-cache\cd91a808c765113c54a365d1f6dd777fec61cc5a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0e7fb78b276bcd6f59c238212027c1c0bae73585\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8a9586c1839e666c79dc5d61db25763ebdd5e07b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.41\d0cfb3ef897c00449e5e696355db9506225fb507\kotlin-stdlib-jdk7-1.2.41.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d0cfb3ef897c00449e5e696355db9506225fb507">
+        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-jdk7-1.2.41_35cd373386a03d6044b49e5a480edbf25f38e048\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.1\cece6996f6bc526ed0d8453a43765bcf8f2b6018\constraint-layout-solver-1.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cece6996f6bc526ed0d8453a43765bcf8f2b6018">
+        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.1.1_32025a315b02f35b6a52c577a66a9ad8809ff431\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -63,15 +81,6 @@
         revision="27.0.3"
         sha1="7e34f009642702250bccd9e5255866f408962a05">
         <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-1.2.41_db67d1569b230adc2fb0ceabfba793261cd7553f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8a9586c1839e666c79dc5d61db25763ebdd5e07b\classes.dex" />
     </item>
     <item
         is-multidex="true"

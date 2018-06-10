@@ -4,9 +4,16 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.connective.android.contact.adapters.RecentCallsAdapter
+import com.connective.android.contact.models.RecentCallers
+import kotlinx.android.synthetic.main.fragment_dial.*
+import kotlinx.android.synthetic.main.fragment_dial.view.*
 
 
 /**
@@ -24,19 +31,39 @@ class DialFragment : Fragment() {
     private var mParam2: String? = null
 
     private var mListener: OnFragmentInteractionListener? = null
-
+    var layoutManager: RecyclerView.LayoutManager? = null
+    var recentCalls: ArrayList<RecentCallers> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
             mParam1 = arguments.getString(ARG_PARAM1)
             mParam2 = arguments.getString(ARG_PARAM2)
         }
+
+
     }
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.fragment_dial, container, false)
+        var dialView = inflater!!.inflate(R.layout.fragment_dial, container, false)
+        this.layoutManager = LinearLayoutManager(context)
+        dialView.lvRecentCalls.layoutManager = this.layoutManager
+        this.recentCalls.add(RecentCallers("Alexander", "88888888", 1))
+        this.recentCalls.add(RecentCallers("Pedro", "77777777", 1))
+        this.recentCalls.add(RecentCallers("Carlos", "666666", 1))
+        this.recentCalls.add(RecentCallers("Valeska", "123456978", 1))
+        this.recentCalls.add(RecentCallers("Miranda", "1111", 1))
+        this.recentCalls.add(RecentCallers("Juancho", "+25365", 1))
+        this.recentCalls.add(RecentCallers("Yolanda", "4687530", 1))
+
+        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.recentCalls)
+        dialView.lvRecentCalls.setHasFixedSize(true)
+        val divider: DividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))
+        dialView.lvRecentCalls.addItemDecoration(divider)
+        return dialView
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -53,6 +80,7 @@ class DialFragment : Fragment() {
 //        } else {
 //            throw RuntimeException(context!!.toString() + " must implement OnFragmentInteractionListener")
 //        }
+
     }
 
     override fun onDetach() {

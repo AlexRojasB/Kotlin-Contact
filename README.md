@@ -19,14 +19,23 @@ Thanks to [Jeyabalakumar](https://dribbble.com/Jeyabalakumar) for this beautiful
 [ ]Show all contact name
 
 [ ]Group same contact
+
 [ ]Show missed call message
 
 [ ]Add ABC filter
+
 [ ]Add square grid
+
 [ ]Color changed between letters
+
 [ ]Chat layout
+
 [ ]Send messages
+
 [ ]Receive messages
+
 [ ]Attached function
+
 [ ]Detail contact layout
+
 [ ]Recorded Call layout

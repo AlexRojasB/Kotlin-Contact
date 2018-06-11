@@ -9,6 +9,7 @@ Thanks to [Jeyabalakumar](https://dribbble.com/Jeyabalakumar) for this beautiful
 ##TODO List
 
 [x]Load Recent call list
+
 [x]Load contact List
 [ ]Add date header
 [ ]Group date items

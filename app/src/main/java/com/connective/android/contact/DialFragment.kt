@@ -24,7 +24,6 @@ import kotlinx.android.synthetic.main.fragment_dial.view.*
 
 /**
  * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
  * [DialFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
  * Use the [DialFragment.newInstance] factory method to
@@ -50,18 +49,14 @@ class DialFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     fun getRecentContacts(): ArrayList<RecentCallers> {
-        val cursor = context.contentResolver.query(Calls.CONTENT_URI, null, null, null, null);
-//        val cursor = context.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
+       val cursor = context.contentResolver.query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC")
+       // val cursor = context.contentResolver.query(Calls.CONTENT_URI, null, null, null, null); not working
         var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
         while (cursor.moveToNext()) {
             var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
             var date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
             val phoneNumber = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER))
             if (name == null) {
-              //  val id = cursor.getString(cursor.getColumnIndex(CallLog.Calls._ID))
-              //  val contactCursor = context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.NUMBER + "=?", arrayOf(phoneNumber), null, null)
-//                val contactCursor = context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone._ID + "=?", arrayOf(id), null, null)
-                //name = contactCursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
                 name = phoneNumber
             }
             var tempCall: RecentCallers = RecentCallers(name, phoneNumber, 0)

@@ -3,12 +3,147 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.41\d0cfb3ef897c00449e5e696355db9506225fb507\kotlin-stdlib-jdk7-1.2.41.jar"
+        jar="C:\Users\Libra\.android\build-cache\a8826412caa3442b76bbf91a391c47292ab30525\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="27.0.3"
-        sha1="d0cfb3ef897c00449e5e696355db9506225fb507">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-jdk7-1.2.41_35cd373386a03d6044b49e5a480edbf25f38e048\classes.dex" />
+        sha1="481f7c5fbf8121550064cb4795e310034a505e95">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_99391ea1a79c7e05354637e6532e8d1d87ba3a7a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_7af46cdc863a85af4eba0703e46be37e7b4e2413.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\72bf4316355ad09de7b9e8a22ba5c0bf95262f05\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_0ec78bd2b2fbd44f2ac8874662278386ae8c9680.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\common-1.0.0_6d33f7e0fc391d4e631f5f71a188f3f561627c23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\c96a534f19783eaca216512f41f4a6cc0c3bc745\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_edcc0ca08f4023c851cfcd4f32fd42691d617981.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\6a9884bc5673d9c59839a89b2bc032ab2d30a299\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_2fabae3c0b99e412f24c254385cb83b113bf103e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\e0f408da2b3939a0bc42372059115e5ac4e1b88e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_5837bf3478ad84735bd81b990b481becd5c30116.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\a8826412caa3442b76bbf91a391c47292ab30525\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="481f7c5fbf8121550064cb4795e310034a505e95">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_99391ea1a79c7e05354637e6532e8d1d87ba3a7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\ff843e9ddd612d8db2dff6161768c98f8d4f1d1e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_f056bfa4eebdfd783f82a74838c9aedd80506abc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\9c0153ef161210af6c2efdced76d0ec09fba385b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_3b87f547fd83b3ac7bce3a86750a75384d61f853.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.android\build-cache\ff843e9ddd612d8db2dff6161768c98f8d4f1d1e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f056bfa4eebdfd783f82a74838c9aedd80506abc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.android\build-cache\9c0153ef161210af6c2efdced76d0ec09fba385b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3b87f547fd83b3ac7bce3a86750a75384d61f853\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\9434c858e5cb552630f2941e0e4d6ab9d36eabd5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_8704cc8d1b4025caf8ba025a3535213bd79a1ea3.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.android\build-cache\72bf4316355ad09de7b9e8a22ba5c0bf95262f05\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d237556caead5b93d97e18a071059a2c0045978e">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0ec78bd2b2fbd44f2ac8874662278386ae8c9680\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Libra\.android\build-cache\3998329020a8c4bbeaba886b197adc37ccf63e39\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_97d039e053073c2a71ebd78c83d50be796162294\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.1\cece6996f6bc526ed0d8453a43765bcf8f2b6018\constraint-layout-solver-1.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cece6996f6bc526ed0d8453a43765bcf8f2b6018">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.1.1_32025a315b02f35b6a52c577a66a9ad8809ff431.jar" />
     </item>
     <item
         is-multidex="true"
@@ -17,79 +152,124 @@
         optimize="true"
         revision="27.0.3"
         sha1="cece6996f6bc526ed0d8453a43765bcf8f2b6018">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.1.1_32025a315b02f35b6a52c577a66a9ad8809ff431\classes.dex" />
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.1.1_32025a315b02f35b6a52c577a66a9ad8809ff431\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Libra\.android\build-cache\d73c4675e553d9a084f768090d83888f839646c1\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.2.41\d0cfb3ef897c00449e5e696355db9506225fb507\kotlin-stdlib-jdk7-1.2.41.jar"
+        jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7293da33f0054a5f41b71a22263ac906574b01d3\classes.dex" />
+        sha1="d0cfb3ef897c00449e5e696355db9506225fb507">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\kotlin-stdlib-jdk7-1.2.41_35cd373386a03d6044b49e5a480edbf25f38e048.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Libra\.android\build-cache\4eb20e9f61cc0b8be95dd725ab83231196df6abe\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ae5f2d4d1d38b45a55a215db7108fb37c1d73983\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\.android\build-cache\bdc6494fd8fece8c72d53b97beb142f30637916f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6323e5bfe60e7002e88df5fa89a40af6a72a2f04\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="41979e9f441cdfb70002266100ed3a69ef2e648f">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0fe79798f79d963854f08617e445beef8144cdd9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\.android\build-cache\cd91a808c765113c54a365d1f6dd777fec61cc5a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="d237556caead5b93d97e18a071059a2c0045978e">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0e7fb78b276bcd6f59c238212027c1c0bae73585\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.41\7e34f009642702250bccd9e5255866f408962a05\kotlin-stdlib-1.2.41.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="27.0.3"
-        sha1="7e34f009642702250bccd9e5255866f408962a05">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-1.2.41_db67d1569b230adc2fb0ceabfba793261cd7553f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="27.0.3"
         sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8a9586c1839e666c79dc5d61db25763ebdd5e07b\classes.dex" />
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_09dab2234e4dbcdadc34aa6e46203de241c3ce90\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.2.41\7e34f009642702250bccd9e5255866f408962a05\kotlin-stdlib-1.2.41.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7e34f009642702250bccd9e5255866f408962a05">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\kotlin-stdlib-1.2.41_db67d1569b230adc2fb0ceabfba793261cd7553f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\3998329020a8c4bbeaba886b197adc37ccf63e39\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_97d039e053073c2a71ebd78c83d50be796162294.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\e6827b0cdba4764124d96dd775a130d42e50eda4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_f7a8c8a9687bdca5f245464d12e29efde4aff88a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\856f15fecfe0d1d452b525c7656fa7005462e59f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_4c5b3d699f8949f30d6f18e988c4a212bfba1b14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\4e29e79480bb6852a1a74dacf2f41ab80c93a972\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_cd2e1b07cba5c2dd733f2ef09bc0cd3ea0449c35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\annotations-13.0_31a85e0d816dab3054ac015a2af49b4b5459291d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\e7c3d433af24074297531aa1402cb70a4bca47fa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_a1871ad09abb65a14631a7048b4c746023d9e72f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\5babb66d0b7d9a1727bc775ebbe0d649c1f926ac\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_2f0442e4407b20ffafcf50463dad3d395824349e.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Libra\.android\build-cache\a83cff6d03339b1f937b3294f8f0c22bacb98259\output\jars\classes.jar"
+        jar="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="27.0.3"
-        sha1="481f7c5fbf8121550064cb4795e310034a505e95">
-        <dex dex="C:\Users\Libra\Documents\GitHub\KotlinProjects\Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_08467022fcff54b1ab8613dbbe679d0bf8c3547a\classes.dex" />
+        sha1="b4375cd35a697f932c244215cf047813834023d5">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c64561aaa48fbefe84a72076f21b9dce7956d7df\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.android\build-cache\f6f5217a558b8c175c2f6602e2e28cc01168cd74\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\classes_fd656d6de2982bc56c92fdab16e3927f1c49dc06.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Libra\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="D:\DATA\Documents\Personal\KotlinProjects\Kotlin-Contact\app\build\intermediates\pre-dexed\debug\common-1.0.0_fd938a807b595ccdaaec0d473b3be06b834b7889.jar" />
     </item>
 
 </items>

@@ -1,10 +1,13 @@
 package com.connective.android.contact
 
+import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.provider.CallLog
+import android.provider.CallLog.*
 import android.provider.ContactsContract
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
@@ -45,19 +48,42 @@ class DialFragment : Fragment() {
 
     }
 
-    fun getContacts(): ArrayList<RecentCallers>{
-        val cursor:Cursor = context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null)
+    @SuppressLint("MissingPermission")
+    fun getRecentContacts(): ArrayList<RecentCallers> {
+        val cursor = context.contentResolver.query(Calls.CONTENT_URI, null, null, null, null);
+//        val cursor = context.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
         var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
-        while (cursor.moveToNext()){
-            TODO("GET PHONE NUMBER AND GET RECENT CALLS, ACTUALLY ARE GETTING ALL CONTACTS")
-            var tempCall:RecentCallers = RecentCallers(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)), cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID)), 0)
-            //var id = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID))
-            //var pCursor =  context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID, + " = ?",  Array<String>), null)
+        while (cursor.moveToNext()) {
+            var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
+            var date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
+            val phoneNumber = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER))
+            if (name == null) {
+              //  val id = cursor.getString(cursor.getColumnIndex(CallLog.Calls._ID))
+              //  val contactCursor = context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.NUMBER + "=?", arrayOf(phoneNumber), null, null)
+//                val contactCursor = context.contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone._ID + "=?", arrayOf(id), null, null)
+                //name = contactCursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                name = phoneNumber
+            }
+            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, 0)
             tempRecentList.add(tempCall)
         }
         return tempRecentList;
     }
 
+
+    fun getContacts(): ArrayList<RecentCallers> {
+        val cursor = context.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
+        var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
+        while (cursor.moveToNext()) {
+
+            val name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+            val phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+            val id = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID))
+            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, id)
+            tempRecentList.add(tempCall)
+        }
+        return tempRecentList;
+    }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -73,7 +99,7 @@ class DialFragment : Fragment() {
         this.recentCalls.add(RecentCallers("Juancho", "+25365", 1))
         this.recentCalls.add(RecentCallers("Yolanda", "4687530", 1))
 
-        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getContacts())
+        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getRecentContacts())
         dialView.lvRecentCalls.setHasFixedSize(true)
         val divider: DividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))

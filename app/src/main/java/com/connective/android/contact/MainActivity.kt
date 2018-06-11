@@ -46,7 +46,9 @@ class MainActivity :  AppCompatActivity()  {
         }
         this.configureTabLayout()
         this.checkPermission()
+        this.checkPermissionCallLogs()
     }
+    //TODO: REFACTOR PERMISSION REQUESTS
     val AccessContactCode = 123
     fun checkPermission(){
         if(Build.VERSION.SDK_INT >= 23){
@@ -56,10 +58,27 @@ class MainActivity :  AppCompatActivity()  {
             }
         }
     }
+    val AccessCallLogsCode = 124
+
+    fun checkPermissionCallLogs(){
+        if(Build.VERSION.SDK_INT >= 23){
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(arrayOf(android.Manifest.permission.READ_CALL_LOG), AccessCallLogsCode)
+                return
+            }
+        }
+    }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when(requestCode){
             AccessContactCode ->{
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+
+                }else{
+                    Toast.makeText(this, "We cannot access to the user Location", Toast.LENGTH_SHORT).show()
+                }
+            }
+            AccessCallLogsCode ->{
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
                 }else{

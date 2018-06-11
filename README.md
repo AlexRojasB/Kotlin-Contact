@@ -11,11 +11,16 @@ Thanks to [Jeyabalakumar](https://dribbble.com/Jeyabalakumar) for this beautiful
 [x]Load Recent call list
 
 [x]Load contact List
+
 [ ]Add date header
+
 [ ]Group date items
+
 [ ]Show all contact name
+
 [ ]Group same contact
 [ ]Show missed call message
+
 [ ]Add ABC filter
 [ ]Add square grid
 [ ]Color changed between letters

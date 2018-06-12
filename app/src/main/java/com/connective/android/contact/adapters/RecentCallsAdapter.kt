@@ -29,7 +29,7 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
         val recentCall:RecentCallers = this.CallersList[position]
         holder!!.tvCallerName.text = recentCall.CallerName
         holder!!.tvCallerNumber.text = recentCall.CallerNumber
-        var firstLetter = recentCall.CallerName[0].toString()
+        var firstLetter = recentCall!!.CallerName[0]!!.toString() ?: "A" //check this
         val drawable:TextDrawable = TextDrawable.builder().buildRound(firstLetter, generator.randomColor)
         holder.letter.setImageDrawable(drawable)
     }

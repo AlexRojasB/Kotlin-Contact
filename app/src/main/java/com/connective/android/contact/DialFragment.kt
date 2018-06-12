@@ -56,17 +56,37 @@ class DialFragment : Fragment() {
             var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
             var date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
             val phoneNumber = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER))
+            val duration = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DURATION))
             if (name == null) {
                 name = phoneNumber
             }
-            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, 0)
+            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, date, null)
             tempRecentList.add(tempCall)
         }
+
+        var temp = tempRecentList.groupBy { it.CallerDate }.map { Pair(it.key, it) }
+        temp.forEach{
+            val (date, list) = it
+            var recentCallers = RecentCallers()
+            list.value.forEach {
+
+            }
+        }
+       /* var temp = tempRecentList.map { r -> Pair(r.CallerDate, tempRecentList.groupBy { it.CallerName }.map { Pair(it.key, it) }) }
+        temp.forEach{
+            val (callerDate, callerGroup) = it
+            callerGroup.forEach {
+                val (callerName, detailGroup) = it
+                detailGroup.value.forEach {
+
+                }
+            }
+        }*/
         return tempRecentList;
     }
 
 
-    fun getContacts(): ArrayList<RecentCallers> {
+/*    fun getContacts(): ArrayList<RecentCallers> {
         val cursor = context.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
         var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
         while (cursor.moveToNext()) {
@@ -78,7 +98,7 @@ class DialFragment : Fragment() {
             tempRecentList.add(tempCall)
         }
         return tempRecentList;
-    }
+    }*/
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -86,13 +106,7 @@ class DialFragment : Fragment() {
         var dialView = inflater!!.inflate(R.layout.fragment_dial, container, false)
         this.layoutManager = LinearLayoutManager(context)
         dialView.lvRecentCalls.layoutManager = this.layoutManager
-        this.recentCalls.add(RecentCallers("Alexander", "88888888", 1))
-        this.recentCalls.add(RecentCallers("Pedro", "77777777", 1))
-        this.recentCalls.add(RecentCallers("Carlos", "666666", 1))
-        this.recentCalls.add(RecentCallers("Valeska", "123456978", 1))
-        this.recentCalls.add(RecentCallers("Miranda", "1111", 1))
-        this.recentCalls.add(RecentCallers("Juancho", "+25365", 1))
-        this.recentCalls.add(RecentCallers("Yolanda", "4687530", 1))
+
 
         dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getRecentContacts())
         dialView.lvRecentCalls.setHasFixedSize(true)

@@ -10,6 +10,7 @@ class RecentCallers {
     var OriginalDate: Long = 0
     val CallerChildren: ArrayList<RecentChild>?
     val CallDuration: String
+    var DiferentDate: Boolean = false
 
     constructor(callerName: String?, callerNumber: String?, callerDate: Long, recentChild: ArrayList<RecentChild>?, callDuration: String) {
         this.CallerName = callerName

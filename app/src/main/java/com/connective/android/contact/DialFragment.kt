@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import com.connective.android.contact.adapters.RecentCallsAdapter
 import com.connective.android.contact.models.RecentCallers
 import com.connective.android.contact.models.RecentChild
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_dial.view.*
 
 
@@ -32,7 +33,6 @@ class DialFragment : Fragment() {
     private var mParam2: String? = null
     private var mListener: OnFragmentInteractionListener? = null
     var layoutManager: RecyclerView.LayoutManager? = null
-    var recentCalls: ArrayList<RecentCallers> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
@@ -66,6 +66,7 @@ class DialFragment : Fragment() {
         var groupCallLogs = unordererdCallLogs.groupBy { it.CallerDate }.map{ Pair(it.key, it.value.groupBy { it.CallerName }) }
         groupCallLogs.forEach{
             val (date, list) = it
+            var dateDiff = true
             list.forEach {
                 val (name, list) = it
                 var tempRecentChilds: ArrayList<RecentChild> = arrayListOf()
@@ -73,7 +74,10 @@ class DialFragment : Fragment() {
                     var child = RecentChild(it.OriginalDate, it.CallDuration)
                     tempRecentChilds.add(child)
                 }
-                reorderedCallLogs.add(RecentCallers(name, list[0].CallerNumber, list[0].OriginalDate, tempRecentChilds, ""))
+                var recentCall = RecentCallers(name, list[0].CallerNumber, list[0].OriginalDate, tempRecentChilds, "")
+                recentCall.DiferentDate = dateDiff
+                reorderedCallLogs.add(recentCall)
+                dateDiff = false
             }
         }
         return reorderedCallLogs

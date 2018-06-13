@@ -1,6 +1,6 @@
 package com.connective.android.contact.models
 
-class RecentChild(date: Int, duration: Int) {
-    val Date:Int = date
-    val Duration:Int = duration
+class RecentChild(date: Long, duration: String) {
+    val Date:Long = date
+    val Duration:String = duration
 }

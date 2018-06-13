@@ -1,14 +1,10 @@
 package com.connective.android.contact
 
 import android.annotation.SuppressLint
-import android.content.ContentResolver
 import android.content.Context
-import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CallLog
-import android.provider.CallLog.*
-import android.provider.ContactsContract
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -18,7 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.connective.android.contact.adapters.RecentCallsAdapter
 import com.connective.android.contact.models.RecentCallers
-import kotlinx.android.synthetic.main.fragment_dial.*
+import com.connective.android.contact.models.RecentChild
 import kotlinx.android.synthetic.main.fragment_dial.view.*
 
 
@@ -51,7 +47,7 @@ class DialFragment : Fragment() {
     fun getRecentContacts(): ArrayList<RecentCallers> {
        val cursor = context.contentResolver.query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC")
        // val cursor = context.contentResolver.query(Calls.CONTENT_URI, null, null, null, null); not working
-        var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
+        var localCallLogs: ArrayList<RecentCallers> = arrayListOf()
         while (cursor.moveToNext()) {
             var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
             var date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
@@ -60,29 +56,27 @@ class DialFragment : Fragment() {
             if (name == null) {
                 name = phoneNumber
             }
-            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, date, null)
-            tempRecentList.add(tempCall)
+            localCallLogs.add(RecentCallers(name, phoneNumber, date!!.toLong(), null, duration))
         }
+        return localCallLogs;
+    }
 
-        var temp = tempRecentList.groupBy { it.CallerDate }.map { Pair(it.key, it) }
-        temp.forEach{
+    fun getFormattedCallLogs(unordererdCallLogs: ArrayList<RecentCallers>): ArrayList<RecentCallers>{
+        var reorderedCallLogs: ArrayList<RecentCallers> = arrayListOf()
+        var groupCallLogs = unordererdCallLogs.groupBy { it.CallerDate }.map{ Pair(it.key, it.value.groupBy { it.CallerName }) }
+        groupCallLogs.forEach{
             val (date, list) = it
-            var recentCallers = RecentCallers()
-            list.value.forEach {
-
+            list.forEach {
+                val (name, list) = it
+                var tempRecentChilds: ArrayList<RecentChild> = arrayListOf()
+                list.forEach {
+                    var child = RecentChild(it.OriginalDate, it.CallDuration)
+                    tempRecentChilds.add(child)
+                }
+                reorderedCallLogs.add(RecentCallers(name, list[0].CallerNumber, list[0].OriginalDate, tempRecentChilds, ""))
             }
         }
-       /* var temp = tempRecentList.map { r -> Pair(r.CallerDate, tempRecentList.groupBy { it.CallerName }.map { Pair(it.key, it) }) }
-        temp.forEach{
-            val (callerDate, callerGroup) = it
-            callerGroup.forEach {
-                val (callerName, detailGroup) = it
-                detailGroup.value.forEach {
-
-                }
-            }
-        }*/
-        return tempRecentList;
+        return reorderedCallLogs
     }
 
 
@@ -108,7 +102,7 @@ class DialFragment : Fragment() {
         dialView.lvRecentCalls.layoutManager = this.layoutManager
 
 
-        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getRecentContacts())
+        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getFormattedCallLogs(this.getRecentContacts()))
         dialView.lvRecentCalls.setHasFixedSize(true)
         val divider: DividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))

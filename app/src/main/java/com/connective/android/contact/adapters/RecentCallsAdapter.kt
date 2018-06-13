@@ -27,9 +27,9 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val recentCall:RecentCallers = this.CallersList[position]
-        holder!!.tvCallerName.text = recentCall.CallerName
+        holder!!.tvCallerName.text = "${recentCall.CallerName}(${recentCall.CallerChildren!!.size})"
         holder!!.tvCallerNumber.text = recentCall.CallerNumber
-        var firstLetter = recentCall!!.CallerName[0]!!.toString() ?: "A" //check this
+        var firstLetter = recentCall.CallerName!![0].toString() ?: "A" //check this
         val drawable:TextDrawable = TextDrawable.builder().buildRound(firstLetter, generator.randomColor)
         holder.letter.setImageDrawable(drawable)
     }

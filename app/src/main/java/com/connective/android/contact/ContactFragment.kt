@@ -33,6 +33,20 @@ class ContactFragment : Fragment() {
         }
     }
 
+    /*    fun getContacts(): ArrayList<RecentCallers> {
+        val cursor = context.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
+        var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
+        while (cursor.moveToNext()) {
+
+            val name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+            val phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+            val id = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID))
+            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, id)
+            tempRecentList.add(tempCall)
+        }
+        return tempRecentList;
+    }*/
+
     public override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                                      savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

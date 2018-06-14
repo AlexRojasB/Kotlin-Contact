@@ -37,8 +37,12 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val recentCall: RecentCallers = this.CallersList[position]
+        if(recentCall.CallerChildren!!.size > 1){
+            holder!!.tvCallerName.text = "${recentCall.CallerName}(${recentCall.CallerChildren!!.size})"
+        }else {
+            holder!!.tvCallerName.text = recentCall.CallerName
+        }
 
-        holder!!.tvCallerName.text = "${recentCall.CallerName}(${recentCall.CallerChildren!!.size})"
         holder.tvCallerNumber.text = recentCall.CallerNumber
         if (recentCall.DiferentDate){
             val dateFormat = SimpleDateFormat("MM/dd/YYYY")

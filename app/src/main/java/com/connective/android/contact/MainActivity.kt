@@ -1,9 +1,6 @@
 package com.connective.android.contact
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.pm.PackageManager
-import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -14,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.connective.android.contact.adapters.TabPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity :  AppCompatActivity()  {
@@ -45,25 +43,26 @@ class MainActivity :  AppCompatActivity()  {
                     .setAction("Action", null).show()
         }
         this.configureTabLayout()
-        this.checkPermission()
+        this.checkContactsPermission()
         this.checkPermissionCallLogs()
     }
-    //TODO: REFACTOR PERMISSION REQUESTS
-    val AccessContactCode = 123
-    fun checkPermission(){
+
+    //<editor-fold desc="Check permissions">
+    private val accessContactCode = 123
+    private fun checkContactsPermission(){
         if(Build.VERSION.SDK_INT >= 23){
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-                requestPermissions(arrayOf(android.Manifest.permission.READ_CONTACTS), AccessContactCode)
+                requestPermissions(arrayOf(android.Manifest.permission.READ_CONTACTS), accessContactCode)
                 return
             }
         }
     }
-    val AccessCallLogsCode = 124
+    private val accessCallLogsCode = 124
 
-    fun checkPermissionCallLogs(){
+   private fun checkPermissionCallLogs(){
         if(Build.VERSION.SDK_INT >= 23){
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED){
-                requestPermissions(arrayOf(android.Manifest.permission.READ_CALL_LOG), AccessCallLogsCode)
+                requestPermissions(arrayOf(android.Manifest.permission.READ_CALL_LOG), accessCallLogsCode)
                 return
             }
         }
@@ -71,14 +70,14 @@ class MainActivity :  AppCompatActivity()  {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when(requestCode){
-            AccessContactCode ->{
+            accessContactCode ->{
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
                 }else{
                     Toast.makeText(this, "We cannot access to the user Location", Toast.LENGTH_SHORT).show()
                 }
             }
-            AccessCallLogsCode ->{
+            accessCallLogsCode ->{
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
                 }else{
@@ -88,6 +87,7 @@ class MainActivity :  AppCompatActivity()  {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
+    //</editor-fold>
 
     private fun configureTabLayout(){
         tab_layout.addTab(tab_layout.newTab().setText("Dial"))

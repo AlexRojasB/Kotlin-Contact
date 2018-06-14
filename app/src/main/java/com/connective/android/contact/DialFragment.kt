@@ -72,7 +72,7 @@ class DialFragment : Fragment() {
     //<editor-fold desc="Check permissions">
     private val accessCallLogsCode = 124
 
-    fun checkPermissionCallLogs(view:View){
+    private fun checkPermissionCallLogs() {
         if(Build.VERSION.SDK_INT >= 23){
             if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(arrayOf(android.Manifest.permission.READ_CALL_LOG), accessCallLogsCode)
@@ -99,12 +99,12 @@ class DialFragment : Fragment() {
     //</editor-fold>
 
     @SuppressLint("MissingPermission")
-    fun getRecentContacts(): ArrayList<RecentCallers> {
+    private fun getRecentContacts(): ArrayList<RecentCallers> {
         val cursor = context.contentResolver.query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC")
-        var localCallLogs: ArrayList<RecentCallers> = arrayListOf()
+        val localCallLogs: ArrayList<RecentCallers> = arrayListOf()
         while (cursor.moveToNext()) {
             var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
-            var date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
+            val date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
             val phoneNumber = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER))
             val duration = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DURATION))
             if (name == null) {
@@ -112,23 +112,24 @@ class DialFragment : Fragment() {
             }
             localCallLogs.add(RecentCallers(name, phoneNumber, date!!.toLong(), null, duration))
         }
-        return localCallLogs;
+        cursor.close()
+        return localCallLogs
     }
 
-    fun getFormattedCallLogs(unordererdCallLogs: ArrayList<RecentCallers>): ArrayList<RecentCallers>{
-        var reorderedCallLogs: ArrayList<RecentCallers> = arrayListOf()
-        var groupCallLogs = unordererdCallLogs.groupBy { it.CallerDate }.map{ Pair(it.key, it.value.groupBy { it.CallerName }) }
+    private fun getFormattedCallLogs(unordererdCallLogs: ArrayList<RecentCallers>): ArrayList<RecentCallers>{
+        val reorderedCallLogs: ArrayList<RecentCallers> = arrayListOf()
+        val groupCallLogs = unordererdCallLogs.groupBy { it.CallerDate }.map{ Pair(it.key, it.value.groupBy { it.CallerName }) }
         groupCallLogs.forEach{
-            val (date, list) = it
+            val (_, list) = it
             var dateDiff = true
             list.forEach {
-                val (name, list) = it
-                var tempRecentChilds: ArrayList<RecentChild> = arrayListOf()
-                list.forEach {
-                    var child = RecentChild(it.OriginalDate, it.CallDuration)
+                val (name, _childList) = it
+                val tempRecentChilds: ArrayList<RecentChild> = arrayListOf()
+                _childList.forEach {
+                    val child = RecentChild(it.OriginalDate, it.CallDuration)
                     tempRecentChilds.add(child)
                 }
-                var recentCall = RecentCallers(name, list[0].CallerNumber, list[0].OriginalDate, tempRecentChilds, "")
+                val recentCall = RecentCallers(name, _childList[0].CallerNumber, _childList[0].OriginalDate, tempRecentChilds, "")
                 recentCall.DiferentDate = dateDiff
                 reorderedCallLogs.add(recentCall)
                 dateDiff = false
@@ -165,16 +166,16 @@ class DialFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        var dialView = inflater!!.inflate(R.layout.fragment_dial, container, false)
-        return dialView
+         return inflater!!.inflate(R.layout.fragment_dial, container, false)
+
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.layoutManager = LinearLayoutManager(context)
         view!!.lvRecentCalls.layoutManager = this.layoutManager
-       view!!.btnCheckPermisson.setOnClickListener {
-            this.checkPermissionCallLogs(it)
+       view.btnCheckPermisson.setOnClickListener {
+            this.checkPermissionCallLogs()
         }
 
         this._prefs = context.getSharedPreferences(this.PREFS_FILENAME, 0)

@@ -23,9 +23,15 @@
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
                           android:orientation="vertical" android:layout_marginStart="5dp"
                           android:layout_gravity="center">
-                <TextView android:id="@+id/callerName" android:layout_width="wrap_content"
-                          android:layout_height="wrap_content" android:text="Alexander Rojas"
-                          android:textColor="@color/colorPrimaryText"/>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+                    <TextView android:id="@+id/callerName" android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" android:text="Alexander Rojas"
+                              android:textColor="@color/colorPrimaryText"/>
+                    <TextView android:id="@+id/tvMissedCalls" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textColor="@color/colorAccent" android:textSize="10dp"
+                              android:text="Missed Call" android:visibility="invisible"  android:layout_marginStart="10dp"/>
+                </LinearLayout>
                 <TextView android:id="@+id/callerNumber" android:layout_width="wrap_content"
                           android:layout_height="wrap_content" android:text="+506 8321 5665"
                           android:textColor="@color/colorSecondaryText" android:textSize="20dp"/>

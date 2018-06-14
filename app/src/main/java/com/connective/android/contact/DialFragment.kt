@@ -107,10 +107,11 @@ class DialFragment : Fragment() {
             val date = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE))
             val phoneNumber = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER))
             val duration = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DURATION))
+            val missed = cursor.getInt(cursor.getColumnIndex(CallLog.Calls.NEW))
             if (name == null) {
                 name = "Unknown"
             }
-            localCallLogs.add(RecentCallers(name, phoneNumber, date!!.toLong(), null, duration))
+            localCallLogs.add(RecentCallers(name, phoneNumber, date!!.toLong(), null, duration, missed == 1))
         }
         cursor.close()
         return localCallLogs
@@ -126,7 +127,7 @@ class DialFragment : Fragment() {
                 val (name, _childList) = it
                 val tempRecentChilds: ArrayList<RecentChild> = arrayListOf()
                 _childList.forEach {
-                    val child = RecentChild(it.OriginalDate, it.CallDuration)
+                    val child = RecentChild(it.OriginalDate, it.CallDuration, it.Missed)
                     tempRecentChilds.add(child)
                 }
                 val recentCall = RecentCallers(name, _childList[0].CallerNumber, _childList[0].OriginalDate, tempRecentChilds, "")

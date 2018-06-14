@@ -12,7 +12,6 @@ import com.amulyakhare.textdrawable.util.ColorGenerator
 import com.connective.android.contact.R
 import com.connective.android.contact.models.RecentCallers
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
 
 class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Adapter<RecentCallsAdapter.ViewHolder>() {
@@ -38,9 +37,18 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val recentCall: RecentCallers = this.CallersList[position]
         if(recentCall.CallerChildren!!.size > 1){
-            holder!!.tvCallerName.text = "${recentCall.CallerName}(${recentCall.CallerChildren!!.size})"
+            holder!!.tvCallerName.text = "${recentCall.CallerName}(${recentCall.CallerChildren.size})"
         }else {
             holder!!.tvCallerName.text = recentCall.CallerName
+        }
+        val missedCalls = recentCall.CallerChildren.filter { it.Missed }.size
+        if(missedCalls > 0){
+            holder.tvMissCalled.visibility = View.VISIBLE
+        }else{
+            holder.tvMissCalled.visibility = View.INVISIBLE
+        }
+        if(missedCalls > 1){
+            holder.tvMissCalled.text = "Missed Calls(${missedCalls})"
         }
 
         holder.tvCallerNumber.text = recentCall.CallerNumber
@@ -49,26 +57,26 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
             val netDate = Date(recentCall.OriginalDate)
             val recentCallDay = Date(dateFormat.format(netDate))
             val dateToday = Date(dateFormat.format(Date().time))
-             var diff:Long = dateToday.time - recentCallDay.time
+            var diff:Long = dateToday.time - recentCallDay.time
             diff = (diff / (1000 * 60 * 60 * 24))
-            var headerText: String
+            val headerText: String
 
-            when(diff.toInt()) {
+            headerText = when(diff.toInt()) {
                 0 -> {
-                    headerText = "Today"
+                    "Today"
                 }
                 1 -> {
-                    headerText = "Yesterday"
+                    "Yesterday"
                 }
                 else -> {
-                    headerText = recentCall.CallerDate!!
+                    recentCall.CallerDate!!
                 }
             }
-            holder.header.text = headerText
+            holder.tvHeader.text = headerText
         }
-        var firstLetter = recentCall.CallerName!![0].toString() ?: "A" //check this
+        val firstLetter = recentCall.CallerName!![0].toString()
         val drawable: TextDrawable = TextDrawable.builder().buildRound(firstLetter, generator.randomColor)
-        holder.letter.setImageDrawable(drawable)
+        holder.ivLetter.setImageDrawable(drawable)
     }
 
     fun filterCallLogs(filteredList: ArrayList<RecentCallers>){
@@ -79,8 +87,9 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvCallerName: TextView = itemView.callerName
         val tvCallerNumber: TextView = itemView.callerNumber
-        val letter: ImageView = itemView.gmailitem_letter
-        val header: TextView = itemView.tvHeaderRow
+        val ivLetter: ImageView = itemView.gmailitem_letter
+        val tvHeader: TextView = itemView.tvHeaderRow
+        val tvMissCalled: TextView = itemView.tvMissedCalls
     }
 
 }

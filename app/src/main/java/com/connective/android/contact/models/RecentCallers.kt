@@ -11,8 +11,9 @@ class RecentCallers {
     val CallerChildren: ArrayList<RecentChild>?
     val CallDuration: String
     var DiferentDate: Boolean = false
+    var Missed:Boolean = false
 
-    constructor(callerName: String?, callerNumber: String?, callerDate: Long, recentChild: ArrayList<RecentChild>?, callDuration: String) {
+    constructor(callerName: String?, callerNumber: String?, callerDate: Long, recentChild: ArrayList<RecentChild>?, callDuration: String, missed:Boolean = false) {
         this.CallerName = callerName
         this.CallerNumber = callerNumber
         this.CallerChildren = recentChild
@@ -21,6 +22,7 @@ class RecentCallers {
         val netDate = Date(callerDate)
         this.CallerDate = dateFormat.format(netDate)
         this.CallDuration = callDuration
+        this.Missed = missed
     }
 
 

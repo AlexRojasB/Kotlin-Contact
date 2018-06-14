@@ -2,9 +2,13 @@ package com.connective.android.contact
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.CallLog
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -12,10 +16,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.connective.android.contact.adapters.RecentCallsAdapter
 import com.connective.android.contact.models.RecentCallers
 import com.connective.android.contact.models.RecentChild
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_dial.*
 import kotlinx.android.synthetic.main.fragment_dial.view.*
 
 
@@ -42,11 +48,44 @@ class DialFragment : Fragment() {
 
 
     }
+    //<editor-fold desc="User Preferences">
+    private val PREFS_FILENAME = "com.connective.android.contact"
+    private  val Call_Log_PERMISSION = "callLogsPermission"
+    var prefs: SharedPreferences? = null
+    //</editor-fold>
+
+    //<editor-fold desc="Check permissions">
+    private val accessCallLogsCode = 124
+
+    fun checkPermissionCallLogs(view:View){
+        if(Build.VERSION.SDK_INT >= 23){
+            if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(arrayOf(android.Manifest.permission.READ_CALL_LOG), accessCallLogsCode)
+                return
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when(requestCode){
+            accessCallLogsCode ->{
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    val editor = prefs!!.edit()
+                    editor.putBoolean(this.Call_Log_PERMISSION, true)
+                    editor.apply()
+                    this.constructListView(this.view)
+                }else{
+                    Toast.makeText(context, "We cannot access to the call logs.", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+    //</editor-fold>
 
     @SuppressLint("MissingPermission")
     fun getRecentContacts(): ArrayList<RecentCallers> {
        val cursor = context.contentResolver.query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC")
-       // val cursor = context.contentResolver.query(Calls.CONTENT_URI, null, null, null, null); not working
         var localCallLogs: ArrayList<RecentCallers> = arrayListOf()
         while (cursor.moveToNext()) {
             var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
@@ -83,19 +122,31 @@ class DialFragment : Fragment() {
         return reorderedCallLogs
     }
 
+    private fun constructListView(dialView: View?) {
+
+        dialView!!.lvRecentCalls.adapter = RecentCallsAdapter(this.getFormattedCallLogs(this.getRecentContacts()))
+        dialView!!.lvRecentCalls.setHasFixedSize(true)
+        val divider = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))
+        dialView.lvRecentCalls.addItemDecoration(divider)
+        lvRecentCalls.visibility = View.VISIBLE
+        llCheckPermission.visibility = View.GONE
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         var dialView = inflater!!.inflate(R.layout.fragment_dial, container, false)
         this.layoutManager = LinearLayoutManager(context)
         dialView.lvRecentCalls.layoutManager = this.layoutManager
-
-
-        dialView.lvRecentCalls.adapter = RecentCallsAdapter(this.getFormattedCallLogs(this.getRecentContacts()))
-        dialView.lvRecentCalls.setHasFixedSize(true)
-        val divider: DividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-        divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))
-        dialView.lvRecentCalls.addItemDecoration(divider)
+        dialView.btnCheckPermisson.setOnClickListener {
+            this.checkPermissionCallLogs(it)
+        }
+        this.prefs = context.getSharedPreferences(this.PREFS_FILENAME, 0)
+        val callLogsPermission = prefs!!.getBoolean(this.Call_Log_PERMISSION,false)
+        if(callLogsPermission){
+           this.constructListView(dialView)
+        }
         return dialView
     }
 

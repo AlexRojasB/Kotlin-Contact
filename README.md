@@ -1,6 +1,6 @@
 #Contact App - Kotlin
 
-I am creating this application for leaning porpuses.
+I am creating this application for leaning porpuses. 
 
 ##Desing
 
@@ -12,13 +12,13 @@ Thanks to [Jeyabalakumar](https://dribbble.com/Jeyabalakumar) for this beautiful
 
 [x]Load contact List
 
-[ ]Add date header
+[x]Add date header
 
-[ ]Group date items
+[x]Group date items
 
 [x]Show all contact name
 
-[ ]Group same contact
+[x]Group same contact
 
 [ ]Show missed call message
 
@@ -39,3 +39,5 @@ Thanks to [Jeyabalakumar](https://dribbble.com/Jeyabalakumar) for this beautiful
 [ ]Detail contact layout
 
 [ ]Recorded Call layout
+
+[ ] Dial function

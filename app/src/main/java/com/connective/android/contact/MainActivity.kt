@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.connective.android.contact.adapters.TabPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -43,23 +44,12 @@ class MainActivity :  AppCompatActivity()  {
                     .setAction("Action", null).show()
         }
         this.configureTabLayout()
-        this.checkContactsPermission()
-        this.checkPermissionCallLogs()
     }
 
     //<editor-fold desc="Check permissions">
-    private val accessContactCode = 123
-    private fun checkContactsPermission(){
-        if(Build.VERSION.SDK_INT >= 23){
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-                requestPermissions(arrayOf(android.Manifest.permission.READ_CONTACTS), accessContactCode)
-                return
-            }
-        }
-    }
     private val accessCallLogsCode = 124
 
-   private fun checkPermissionCallLogs(){
+   fun checkPermissionCallLogs(view: View){
         if(Build.VERSION.SDK_INT >= 23){
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(arrayOf(android.Manifest.permission.READ_CALL_LOG), accessCallLogsCode)
@@ -70,13 +60,6 @@ class MainActivity :  AppCompatActivity()  {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when(requestCode){
-            accessContactCode ->{
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
-
-                }else{
-                    Toast.makeText(this, "We cannot access to the user Location", Toast.LENGTH_SHORT).show()
-                }
-            }
             accessCallLogsCode ->{
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
 

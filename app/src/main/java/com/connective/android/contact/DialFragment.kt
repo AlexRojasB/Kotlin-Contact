@@ -13,6 +13,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +22,6 @@ import android.widget.Toast
 import com.connective.android.contact.adapters.RecentCallsAdapter
 import com.connective.android.contact.models.RecentCallers
 import com.connective.android.contact.models.RecentChild
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_dial.*
 import kotlinx.android.synthetic.main.fragment_dial.view.*
 
@@ -34,6 +35,8 @@ import kotlinx.android.synthetic.main.fragment_dial.view.*
  */
 class DialFragment : Fragment() {
 
+    private var _recentCallersList: ArrayList<RecentCallers> = arrayListOf()
+    private var _recentAdapter: RecentCallsAdapter? = null
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
     private var mParam2: String? = null
@@ -48,10 +51,22 @@ class DialFragment : Fragment() {
 
 
     }
+
+    private fun searchFilterChange(criteria:String){
+        val filteredCallLogs = ArrayList<RecentCallers>()
+
+        for(callers in this._recentCallersList){
+            if (callers.CallerName!!.toLowerCase().contains(criteria.toLowerCase())){
+                filteredCallLogs.add(callers)
+            }
+        }
+        this._recentAdapter!!.filterCallLogs(filteredCallLogs)
+    }
+
     //<editor-fold desc="User Preferences">
     private val PREFS_FILENAME = "com.connective.android.contact"
-    private  val Call_Log_PERMISSION = "callLogsPermission"
-    var prefs: SharedPreferences? = null
+    private val Call_Log_PERMISSION = "callLogsPermission"
+    private var _prefs: SharedPreferences? = null
     //</editor-fold>
 
     //<editor-fold desc="Check permissions">
@@ -70,7 +85,7 @@ class DialFragment : Fragment() {
         when(requestCode){
             accessCallLogsCode ->{
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    val editor = prefs!!.edit()
+                    val editor = _prefs!!.edit()
                     editor.putBoolean(this.Call_Log_PERMISSION, true)
                     editor.apply()
                     this.constructListView(this.view)
@@ -85,7 +100,7 @@ class DialFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     fun getRecentContacts(): ArrayList<RecentCallers> {
-       val cursor = context.contentResolver.query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC")
+        val cursor = context.contentResolver.query(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DATE + " DESC")
         var localCallLogs: ArrayList<RecentCallers> = arrayListOf()
         while (cursor.moveToNext()) {
             var name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME))
@@ -123,31 +138,50 @@ class DialFragment : Fragment() {
     }
 
     private fun constructListView(dialView: View?) {
-
-        dialView!!.lvRecentCalls.adapter = RecentCallsAdapter(this.getFormattedCallLogs(this.getRecentContacts()))
-        dialView!!.lvRecentCalls.setHasFixedSize(true)
+        this._recentCallersList = this.getFormattedCallLogs(this.getRecentContacts())
+        this._recentAdapter = RecentCallsAdapter(this._recentCallersList)
+        dialView!!.lvRecentCalls.adapter = this._recentAdapter
+        dialView.lvRecentCalls.setHasFixedSize(true)
         val divider = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         divider.setDrawable(context.getDrawable(R.drawable.recent_call_divider))
         dialView.lvRecentCalls.addItemDecoration(divider)
         lvRecentCalls.visibility = View.VISIBLE
         llCheckPermission.visibility = View.GONE
+        dialView.etSeachCriteria.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                searchFilterChange(s.toString())
+            }
+        })
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         var dialView = inflater!!.inflate(R.layout.fragment_dial, container, false)
+        return dialView
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         this.layoutManager = LinearLayoutManager(context)
-        dialView.lvRecentCalls.layoutManager = this.layoutManager
-        dialView.btnCheckPermisson.setOnClickListener {
+        view!!.lvRecentCalls.layoutManager = this.layoutManager
+       view!!.btnCheckPermisson.setOnClickListener {
             this.checkPermissionCallLogs(it)
         }
-        this.prefs = context.getSharedPreferences(this.PREFS_FILENAME, 0)
-        val callLogsPermission = prefs!!.getBoolean(this.Call_Log_PERMISSION,false)
+
+        this._prefs = context.getSharedPreferences(this.PREFS_FILENAME, 0)
+        val callLogsPermission = _prefs!!.getBoolean(this.Call_Log_PERMISSION,false)
         if(callLogsPermission){
-           this.constructListView(dialView)
+            this.constructListView(view)
         }
-        return dialView
     }
 
     // TODO: Rename method, update argument and hook method into UI event

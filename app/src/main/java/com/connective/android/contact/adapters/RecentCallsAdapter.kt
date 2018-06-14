@@ -16,7 +16,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Adapter<RecentCallsAdapter.ViewHolder>() {
-    val CallersList: ArrayList<RecentCallers> = callerList
+    var CallersList: ArrayList<RecentCallers> = callerList
     val generator: ColorGenerator = ColorGenerator.MATERIAL
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
@@ -69,6 +69,11 @@ class RecentCallsAdapter(callerList: ArrayList<RecentCallers>) : RecyclerView.Ad
         var firstLetter = recentCall.CallerName!![0].toString() ?: "A" //check this
         val drawable: TextDrawable = TextDrawable.builder().buildRound(firstLetter, generator.randomColor)
         holder.letter.setImageDrawable(drawable)
+    }
+
+    fun filterCallLogs(filteredList: ArrayList<RecentCallers>){
+        this.CallersList = filteredList
+        notifyDataSetChanged()
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -11,8 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cfe51de-1abb-4b21-975c-e3d9ba015fdc" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ABCListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ContactListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/ContactParent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/abc_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/contact_grid_column.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterDir="false" />
@@ -20,12 +27,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/ContactFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/ContactFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/RecentCallsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/RecentCallsAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/RecentCallers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/RecentCallers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/RecentChild.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/RecentChild.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recent_calls_header_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recent_calls_header_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recent_calls_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recent_calls_row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_dial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_dial.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,23 +72,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DialFragment.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt">
+      <file leaf-file-name="ContactListAdapter.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ContactListAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="113" column="107" selection-start-line="113" selection-start-column="107" selection-end-line="113" selection-end-column="107" />
+            <state relative-caret-position="119">
+              <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
-                <element signature="e#40#1007#0" expanded="true" />
+                <element signature="e#49#137#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecentCallsAdapter.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/RecentCallsAdapter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -93,10 +89,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
-        <option value="Kotlin File" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -2224,7 +2221,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/contacts.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_contacts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/TabPagerAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_messages.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" />
@@ -2238,18 +2234,24 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/header_date_drawable.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/ContactFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/TabPagerAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/permission_button_bg.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_dial.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/RecentCallers.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/RecentChild.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recent_calls_header_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recent_calls_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/RecentCallsAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_dial.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/ContactParent.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/abc_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/ContactFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ABCListAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/contact_grid_column.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ContactListAdapter.kt" />
       </list>
     </option>
   </component>
@@ -2266,20 +2268,21 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1494" />
-    <option name="y" value="-319" />
-    <option name="width" value="983" />
-    <option name="height" value="543" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-2073" />
+    <option name="y" value="-328" />
+    <option name="width" value="1380" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="AndroidView" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2313,67 +2316,31 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
             <path>
-              <item name="Kotlin-Contact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin-Contact" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="contact" type="462c0819:PsiDirectoryNode" />
+              <item name="Kotlin-Contact" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
-              <item name="Kotlin-Contact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin-Contact" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="contact" type="462c0819:PsiDirectoryNode" />
-              <item name="adapters" type="462c0819:PsiDirectoryNode" />
+              <item name="Kotlin-Contact" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
-              <item name="Kotlin-Contact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin-Contact" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kotlin-Contact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin-Contact" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="drawable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kotlin-Contact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin-Contact" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kotlin-Contact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kotlin-Contact" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="values" type="462c0819:PsiDirectoryNode" />
+              <item name="Kotlin-Contact" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2500,41 +2467,41 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-319" width="1936" height="1066" extended-state="6" />
+    <frame x="-1928" y="-319" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.3297414" />
       <window_info id="Build Variants" order="2" sideWeight="0.5010776" side_tool="true" weight="0.17110874" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" weight="0.29202586" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5021322" side_tool="true" visible="true" weight="0.10021552" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49946696" weight="0.40840518" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49733475" weight="0.15193966" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4978678" visible="true" weight="0.10021552" />
       <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.17110874" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.49245688" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" weight="0.2775974" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297414" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Preview" order="3" weight="0.35325265" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297414" />
+      <window_info anchor="right" id="Preview" order="3" weight="0.3525836" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.33081895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32954547" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297414" />
       <window_info id="Captures" order="2" weight="0.32995737" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.23667377" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.22121535" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.47469324" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" sideWeight="0.5010776" side_tool="true" weight="0.17110874" />
+      <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="8" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3297414" />
     </layout>
@@ -2546,19 +2513,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt</url>
-          <line>110</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ABCListAdapter.kt</url>
+          <line>28</line>
           <properties />
-          <option name="timeStamp" value="38" />
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt</url>
-          <line>109</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ABCListAdapter.kt</url>
+          <line>24</line>
           <properties />
-          <option name="timeStamp" value="39" />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ABCListAdapter.kt</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -2636,61 +2609,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="24" lean-forward="true" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contacts.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_contacts.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/MessagesFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/call_icon_bg.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/recent_call_divider.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -2721,20 +2639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="1518" selection-start-line="1518" selection-end-line="1518" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -2785,13 +2689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/ContactFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -2825,9 +2722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="197" selection-start-line="197" selection-end-line="197" />
-          <folding>
-            <element signature="e#7046#7047#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2852,14 +2746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_messages.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -2872,17 +2758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="1487" column="16" selection-start-line="1487" selection-start-column="16" selection-end-line="1487" selection-end-column="16" />
-          <folding>
-            <element signature="e#25244#25245#0" expanded="true" />
-            <element signature="e#25308#25309#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -2900,14 +2775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_dial.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="70" lean-forward="true" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="71" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recent_calls_header_row.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -2916,28 +2783,157 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recent_calls_row.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="32" column="88" selection-start-line="32" selection-start-column="88" selection-end-line="32" selection-end-column="88" />
+        <state relative-caret-position="17">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/connective/android/contact/ExampleInstrumentedTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_dial.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.50/d3189b4b8c72c7f3a327e3c21dca8dbcba267359/kotlin-stdlib-common-1.2.50-sources.jar!/kotlin/collections/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="111" column="15" selection-start-line="111" selection-start-column="15" selection-end-line="111" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recent_calls_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/abc_layout.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/models/ContactParent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/RecentCallsAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding>
+            <element signature="e#49#566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/DialFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="113" column="107" selection-start-line="113" selection-start-column="107" selection-end-line="113" selection-end-column="107" />
+        <state relative-caret-position="-383">
+          <caret line="143" column="30" selection-start-line="143" selection-start-column="30" selection-end-line="143" selection-end-column="52" />
           <folding>
             <element signature="e#40#1007#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/RecentCallsAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/ContactFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="47" column="59" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+        <state relative-caret-position="155">
+          <caret line="70" column="95" selection-start-line="70" selection-start-column="95" selection-end-line="70" selection-end-column="95" />
+          <folding>
+            <element signature="e#40#627#0" expanded="true" />
+            <element signature="n#!!block;n#getContacts#0;n#!!block;n#ContactFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.android/build-cache/72bf4316355ad09de7b9e8a22ba5c0bf95262f05/output/jars/classes.jar!/com/amulyakhare/textdrawable/TextDrawable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="131" column="21" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ABCListAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding>
+            <element signature="e#50#503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contact_grid_column.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_contact.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/connective/android/contact/adapters/ContactListAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="e#49#137#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -4,10 +4,47 @@
              android:layout_height="match_parent"
              tools:context="com.connective.android.contact.ContactFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Contacts"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/colorPrimary">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/colorPrimaryDark">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/search_contact_bg" android:layout_marginStart="10pt" android:layout_marginEnd="10pt" android:layout_marginTop="5pt" android:layout_marginBottom="5pt">
+                <EditText android:id="@+id/etSeachCriteria" android:layout_width="match_parent" android:layout_height="30dp" android:hint="Search Contacts" android:background="@android:color/transparent" android:layout_marginStart="3pt"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/llCheckPermission" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:textAllCaps="false" android:layout_width="wrap_content" android:id="@+id/btnCheckPermission"
+                    android:background="@drawable/permission_button_bg" android:layout_margin="5sp" android:elevation="1sp"
+                    android:padding="5sp" android:layout_height="wrap_content" android:text="Allow Permission"
+                    android:textSize="12sp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/colorSecondaryText" android:text="Please allow permissions to read the call logs and contacts." android:layout_gravity="center" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <android.support.v7.widget.RecyclerView android:layout_marginTop="15dp"
+                                                    android:visibility="visible"
+                                                    android:id="@+id/lvABC"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@color/colorPrimary"
+                                                    android:scrollbars="none"
+                                                    android:scaleType="fitXY"
+                                                    android:adjustViewBounds="true"
+                                                    android:clipToPadding="false"
+                                                    android:orientation="horizontal"/>
+        </LinearLayout>
+
+        <!--<android.support.v7.widget.RecyclerView android:layout_marginTop="15dp"-->
+                                                <!--android:visibility="gone"-->
+                                                <!--android:id="@+id/lvContactList"-->
+                                                <!--android:layout_width="match_parent"-->
+                                                <!--android:layout_height="match_parent"-->
+                                                <!--android:background="@color/colorPrimary"-->
+                                                <!--android:scrollbars="vertical"/>-->
+        <GridView
+                android:columnWidth="64pt"
+                android:numColumns="auto_fit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/lvContactList"/>
+    </LinearLayout>
+
 
 </FrameLayout>

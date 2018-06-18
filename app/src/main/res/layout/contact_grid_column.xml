@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="63pt"
+                android:padding="3dp"
+                android:layout_height="50pt">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="AR" android:gravity="center|top" android:layout_marginTop="10dp" android:textColor="@color/colorPrimaryText" android:textSize="18dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Alexander Rojas" android:gravity="center" android:layout_marginTop="5dp" android:textColor="@color/colorPrimaryText" />
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:text="+506 83215665" android:gravity="center|top" android:layout_marginTop="5dp" android:textColor="@color/colorSecondaryText" />
+    </LinearLayout>
+</LinearLayout>

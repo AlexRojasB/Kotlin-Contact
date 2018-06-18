@@ -3,10 +3,17 @@ package com.connective.android.contact
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.connective.android.contact.adapters.ABCListAdapter
+import com.connective.android.contact.models.ContactParent
+import kotlinx.android.synthetic.main.fragment_contact.*
+import kotlinx.android.synthetic.main.fragment_contact.view.*
 
 
 /**
@@ -22,10 +29,12 @@ class ContactFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
     private var mParam2: String? = null
-
+    var layoutManager: RecyclerView.LayoutManager? = null
     private var mListener: OnFragmentInteractionListener? = null
+    val ABCList: ArrayList<String> = arrayListOf("A", "B", "C","D", "E", "F","G", "H", "I","J", "K", "L","M", "N", "O","P", "Q", "R","S", "T", "U","V", "W", "X","Y","Z")
 
-    public override fun onCreate(savedInstanceState: Bundle?) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1)
@@ -33,24 +42,36 @@ class ContactFragment : Fragment() {
         }
     }
 
-    /*    fun getContacts(): ArrayList<RecentCallers> {
+    fun getContacts(): ArrayList<ContactParent> {
         val cursor = context.contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC")
-        var tempRecentList: ArrayList<RecentCallers> = arrayListOf()
+        var tempRecentList: ArrayList<ContactParent> = arrayListOf()
         while (cursor.moveToNext()) {
 
             val name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
             val phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
             val id = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID))
-            var tempCall: RecentCallers = RecentCallers(name, phoneNumber, id)
+            var tempCall: ContactParent = ContactParent(id, name, phoneNumber)
             tempRecentList.add(tempCall)
         }
         return tempRecentList;
-    }*/
+    }
+
+    //<editor-fold desc="Check permissions">
+
+    //</editor-fold>
 
     public override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                                      savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater!!.inflate(R.layout.fragment_contact, container, false)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        this.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        view!!.lvABC.layoutManager = this.layoutManager
+        view!!.lvABC.adapter = ABCListAdapter(this.ABCList)
+        view.lvABC.setHasFixedSize(true)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

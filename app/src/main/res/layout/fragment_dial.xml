@@ -7,7 +7,7 @@
 <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/colorPrimary">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/colorPrimaryDark">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/search_contact_bg" android:layout_marginStart="10pt" android:layout_marginEnd="10pt" android:layout_marginTop="5pt" android:layout_marginBottom="5pt">
-            <EditText android:id="@+id/etSeachCriteria" android:layout_width="match_parent" android:layout_height="30dp" android:hint="Search Contacts" android:background="@android:color/transparent" android:layout_marginStart="3pt"/>
+            <EditText android:id="@+id/etSeachCriteria" android:layout_width="match_parent" android:layout_height="30dp" android:hint="Search call" android:background="@android:color/transparent" android:layout_marginStart="3pt"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
-            android:scrollbars="vertical"/>
+            android:scrollbars="none"/>
 </LinearLayout>
 
 </FrameLayout>
